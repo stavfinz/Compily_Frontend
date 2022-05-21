@@ -1,0 +1,29 @@
+.stage {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 5px 0px 30px;
+    margin-top: 80px;
+    align-items:center;
+    justify-content: center;
+    height: calc(100% - 130px);
+    width: 100%;
+    background-color:#E5E5E5;
+    color: white;
+    overflow: scroll;
+    text-align: center;
+}
+
+.item {
+    /* align-content: space-between;
+    justify-content: space-around; */
+    width: 70%;
+    flex-shrink: 1;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    /* justify-content: space-evenly; */
+    grid-gap: 20px;
+}

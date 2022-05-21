@@ -1,0 +1,30 @@
+.full-size {
+    width: 100%;
+    text-align: center;
+}
+
+.inside-margin {
+    margin: 15px;
+}
+
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container2{
+    display: flex;
+    justify-content: space-around;
+}
+
+.item{
+    margin-bottom: 10px;
+}
+
+.form-size {
+    width: 30%;
+    height: 30%;
+}

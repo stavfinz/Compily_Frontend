@@ -1,0 +1,9 @@
+.patient-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.patient-item {
+    margin-bottom: 20px;
+}
