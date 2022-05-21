@@ -1,0 +1,9 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-item {
+    align-self: center;
+    margin: 10px;
+}

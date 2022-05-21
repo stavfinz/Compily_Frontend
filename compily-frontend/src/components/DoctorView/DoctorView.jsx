@@ -9,9 +9,6 @@ const DoctorView = () => {
                 <PatientTable />
             </div>
 
-            <div className="patient-item">
-                <PatientTable />
-            </div>
 
         </div>
     )
