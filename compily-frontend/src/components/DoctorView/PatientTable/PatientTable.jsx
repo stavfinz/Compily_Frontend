@@ -26,15 +26,7 @@ const rows = [
 export default function BasicTableAndSearch() {
     return (
         <div>
-            <div className="search-container" >
-                <div className="search-item">
-                    <Button variant="contained" size='large'>חפש</Button>
-                </div>
-                <div className="search-item">
-                    <TextField fullWidth id="outlined-basic" label="חפש לפי ת״ז" variant="outlined" />
-                </div>
 
-            </div>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table" dir="rtl">
                     <TableHead>

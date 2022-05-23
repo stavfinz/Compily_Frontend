@@ -2,11 +2,11 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    padding: 50px 5px 0px 30px;
+    /* padding: 50px 0px 0px 0px; */
     margin-top: 80px;
     align-items:center;
     justify-content: center;
-    height: calc(100% - 130px);
+    height: calc(100% - 80px);
     width: 100%;
     background-color:#E5E5E5;
     color: white;
