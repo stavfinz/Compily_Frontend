@@ -11,43 +11,73 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-import './PatientTable.css';
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 
-function createData(name, calories) {
-    return { name, calories };
+import './PatientTable.css';
+import { LocalConvenienceStoreOutlined, PropaneSharp } from '@mui/icons-material';
+import { IndexKind } from 'typescript';
+
+import Dialog from '../../../ui/Dialog/Dialog'
+import PatientRow from './PatientRow';
+
+function createData(name, date) {
+    return { name, date };
 }
 
 const rows = [
-    createData('כאב ראש', '2/5/2022'),
-    createData('כאב בטן', '27/2/2022'),
-    createData('כאב שיניים', '8/8/2022'),
+    createData('כאב ראש', '2/5/2022',),
+    createData('כאב בטן', '27/2/2022',),
+    createData('כאב שיניים', '8/8/2022',),
 ];
 
 export default function BasicTableAndSearch() {
+
+    const [treatments, setTreatments] = React.useState(rows)
+    const [editDialog, setEditDialog] = React.useState(false)
+
+
+    const editTreatment = (id) => {
+        console.log('Edit Clicked!');
+        setEditDialog(true);
+    }
+
+    const clickHendleClose = () => {
+        setEditDialog(false)
+    }
+
+    const deleteTreatment = (id) => {
+        console.log('Delete Clicked!');
+        setTreatments(prevTreatments => {
+            return prevTreatments.filter((treatment, index) => {
+                return index !== id;
+            });
+        });
+    }
+
     return (
         <div>
-
+            {editDialog ? <Dialog title="כאן ניתן לערוך טיפול" input={true} button="אישור" onCloseDialog={clickHendleClose} /> : null}
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table" dir="rtl">
                     <TableHead>
                         <TableRow>
                             <TableCell align="right">שם הטיפול</TableCell>
                             <TableCell align="right">תאריך</TableCell>
-                            <TableCell align="right">האם בוצע?</TableCell>
+                            <TableCell align="right">עריכה</TableCell>
+                            <TableCell align="right">מחיקה</TableCell>
+
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
-                            <TableRow
-                                key={row.name}
-                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                            >
-                                <TableCell align="right" component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.calories}</TableCell>
-                                <TableCell align="right">
-                                    <input type="checkbox" />
-                                </TableCell>
-                            </TableRow>
+                        {treatments.map((treatment, index) => (
+                            <PatientRow
+                                key={index}
+                                id={index}
+                                onDelete={deleteTreatment}
+                                onEdit={editTreatment}
+                                treatment={treatment}
+                            />
                         ))}
                     </TableBody>
                 </Table>

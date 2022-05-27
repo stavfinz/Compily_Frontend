@@ -6,23 +6,26 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
+import TextField from '@mui/material/TextField';
 
-export default function AlertDialog() {
-    const [open, setOpen] = React.useState(false);
+export default function AlertDialog(props) {
+    const [open, setOpen] = React.useState(true);
 
     const handleClickOpen = () => {
         setOpen(true);
     };
 
     const handleClose = () => {
-        setOpen(false);
+        props.onCloseDialog();
+        // setOpen(false);
+
     };
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen}>
+            {/* <Button variant="outlined" onClick={handleClickOpen}>
                 Open alert dialog
-      </Button>
+      </Button> */}
             <Dialog
                 open={open}
                 onClose={handleClose}
@@ -31,18 +34,27 @@ export default function AlertDialog() {
                 dir="rtl"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"כל הכבוד לך "}<InsertEmoticonOutlinedIcon />
+                    {props.title} <InsertEmoticonOutlinedIcon />
                 </DialogTitle>
                 <DialogContent>
+                    {props.input ?
+                        <div className="search-container" >
+                            <div className="search-item">
+                                <TextField fullWidth id="outlined-basic" label="שם טיפול" variant="outlined" />
+                            </div>
+                            <div className="search-item">
+                                <Button variant="contained" size='large' type="submit">עדכן</Button>
+                            </div>
+                        </div> : null}
                     <DialogContentText id="alert-dialog-description">
-                        המשך כך!
-          </DialogContentText>
+                        {props.content}
+                    </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     {/* <Button onClick={handleClose}>Disagree</Button> */}
                     <Button onClick={handleClose} autoFocus>
-                        אישור
-          </Button>
+                        {props.button}
+                    </Button>
                 </DialogActions>
             </Dialog>
         </div>

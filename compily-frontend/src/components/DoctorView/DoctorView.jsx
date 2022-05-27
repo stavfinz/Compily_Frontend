@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 
 const DoctorView = () => {
 
-    const [patientFound, setPatientFound] = useState(true);
+    const [patientFound, setPatientFound] = useState(false);
 
     const handleDelete = () => {
         console.info('You clicked the delete icon.');
@@ -20,7 +20,8 @@ const DoctorView = () => {
 
     const handleClick = () => {
         console.log("Click!");
-        window.location.reload();
+        setPatientFound(true);
+        //window.location.reload();
     }
 
     return (
@@ -31,10 +32,10 @@ const DoctorView = () => {
                         <Button variant="contained" size='large' type="submit" onClick={handleClick}>חפש</Button>
                     </div>
                     <div className="search-item">
-                        <TextField fullWidth id="outlined-basic" label="חפש לפי ת״ז" variant="outlined" />
+                        <TextField fullWidth id="outlined-basic" label="חפש לפי מטופל ת״ז" variant="outlined" />
                     </div>
                     <div className="search-item">
-                        {patientFound ? <Chip label="ריאל ז׳ורנו" variant="outlined" onDelete={handleDelete} /> : null}
+                        {patientFound ? <Chip label="ישראל ישראלי" variant="outlined" onDelete={handleDelete} /> : null}
                     </div>
 
                 </div>

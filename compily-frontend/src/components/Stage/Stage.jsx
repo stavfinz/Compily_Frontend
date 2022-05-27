@@ -5,15 +5,29 @@ import DoctorView from '../DoctorView/DoctorView'
 import PatientView from '../PatientView/PatientView'
 
 const Stage = () => {
-    const [doctor, setDoctor] = useState(false);
+    const [login, setLogin] = useState(true);
+    const [toggleView, setToggleView] = useState('doctor')
+
+    const selectViewHandler = (personState) => {
+        setToggleView(personState);
+        console.log(toggleView);
+    }
+
+    const formSend = () => {
+        setLogin(false);
+    }
 
     return (
         <div className='stage'>
-            {doctor ?
-                <LogIn /> :
-                //<DoctorView />
-                <PatientView />
-            }
+            {/* <LogIn /> */}
+            <DoctorView />
+            {/* <PatientView /> */}
+            {/* {login ?
+                <LogIn onSelectView={selectViewHandler} onLogin={formSend} /> :
+                (toggleView === 'doctor' ?
+                    <DoctorView /> :
+                    (toggleView === 'patient' && <PatientView />))
+            } */}
         </div>
     );
 }

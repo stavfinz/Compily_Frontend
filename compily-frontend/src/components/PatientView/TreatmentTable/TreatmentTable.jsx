@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Radio from '@mui/material/Radio';
-import Dialog from './Dialog/Dialog';
+import Dialog from '../../../ui/Dialog/Dialog';
 
 
 export default function SimpleAccordion() {
@@ -16,16 +16,22 @@ export default function SimpleAccordion() {
         setBravoo(true);
     }
 
+    const clickHendleClose = () => {
+        setBravoo(false)
+    }
+
+    const dialogTitle = "כל הכבוד לך";
+
     return (
         <div>
-            {bravoo ? null : <Dialog />}
+            {bravoo ? <Dialog title="כל הכבוד לך" content="המשך כך!" button="אישור" onCloseDialog={clickHendleClose} /> : null}
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography><Radio color="success" onClick={clickHandle} />אנטיביוטיקה</Typography>
+                    <Typography><Radio color="success" onChange={clickHandle} />אנטיביוטיקה</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
@@ -40,7 +46,7 @@ export default function SimpleAccordion() {
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                 >
-                    <Typography><Radio color="success" />משכחי כאבים</Typography>
+                    <Typography><Radio color="success" onChange={clickHandle} />משכחי כאבים</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
