@@ -11,3 +11,8 @@
     color: white;
     overflow: clip;
 }
+
+img {
+    width: auto;
+    height: 70%;
+}

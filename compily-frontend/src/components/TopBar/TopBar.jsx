@@ -4,7 +4,7 @@ import './TopBar.css';
 const TopBar = () => {
     return (
         <nav className='nav'>
-            <h1>TopBar</h1>
+            <img src='../../.././ComPillyLOGO.png' />
         </nav>
     );
 }
