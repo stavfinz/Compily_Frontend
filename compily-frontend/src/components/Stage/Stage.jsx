@@ -10,24 +10,28 @@ const Stage = () => {
 
     const selectViewHandler = (personState) => {
         setToggleView(personState);
-        console.log(toggleView);
+        console.log("to the <stage/> component: '" + toggleView + "'");
     }
 
     const formSend = () => {
         setLogin(false);
     }
 
+    const logOut = () => {
+        setLogin(true);
+    }
+
     return (
         <div className='stage'>
             {/* <LogIn /> */}
-            <DoctorView />
+            {/* <DoctorView /> */}
             {/* <PatientView /> */}
-            {/* {login ?
+            {login ?
                 <LogIn onSelectView={selectViewHandler} onLogin={formSend} /> :
                 (toggleView === 'doctor' ?
-                    <DoctorView /> :
-                    (toggleView === 'patient' && <PatientView />))
-            } */}
+                    <DoctorView onLogOut={logOut} /> :
+                    (toggleView === 'patient' && <PatientView onLogOut={logOut} />))
+            }
         </div>
     );
 }

@@ -7,29 +7,26 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 import "./LogIn.css"
-import { useState } from "react";
 
 const LogIn = (props) => {
 
-
-    const [personState, setPersonState] = useState('')
-
-    const handleChange = (event) => {
-        setPersonState(event.target.value)
-        props.onSelectView(personState)
+    const clickForToggleView = (event) => {
+        console.log("in the <LogIn/> component mark '" + event.target.value + "' (from the san)");
+        const e = event.target.value
+        props.onSelectView(e)
     }
 
     const clickHandler = () => {
         props.onLogin();
     }
 
-    return ([
+    return (
         <Card className="form-size">
             <form>
                 <div className="container">
                     <RadioGroup row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group">
-                        <FormControlLabel id="patient" value="patient" onChange={handleChange} control={<Radio />} label="מטופל" labelPlacement="start" />
-                        <FormControlLabel id="doctor" value="doctor" onChange={handleChange} control={<Radio />} label="דוקטור" labelPlacement="start" />
+                        <FormControlLabel id="patient" value="patient" onClick={clickForToggleView} control={<Radio />} label="מטופל" labelPlacement="start" />
+                        <FormControlLabel id="doctor" value="doctor" onClick={clickForToggleView} control={<Radio />} label="דוקטור" labelPlacement="start" />
                     </RadioGroup>
                 </div>
 
@@ -40,7 +37,6 @@ const LogIn = (props) => {
                 <Button variant="contained" onClick={clickHandler}>התחבר</Button>
             </form>
         </Card >
-    ]
     )
 }
 

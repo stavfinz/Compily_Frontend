@@ -1,0 +1,16 @@
+[
+	{
+		"patientId": "515516517",
+		"firstName": "רבקה",
+		"lastName": "שלו",
+		"age": 51,
+		"doctorId": "246824682"
+	},
+	{
+		"patientId": "414415416",
+		"firstName": "חנוך",
+		"lastName": "רוזנשטיין",
+		"age": 37,
+		"doctorId": "246824682"
+	}
+]

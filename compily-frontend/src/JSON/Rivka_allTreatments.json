@@ -1,0 +1,11 @@
+[
+  {
+    "treatmentPk": {
+      "treatmentName": "לאכול",
+      "patientId": "515516517"
+    },
+    "date": "2022-6-4",
+    "description": "לקחת פעמיים ביום, בבוקר ובצהריים",
+    "complied": false
+  }
+]

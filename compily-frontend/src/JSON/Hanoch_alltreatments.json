@@ -1,0 +1,11 @@
+[
+	{
+		"treatmentPk": {
+			"treatmentName": "דכאון",
+			"patientId": "414415416"
+		},
+		"date": "2022-6-5",
+		"description": "לקחת רק בבוקר!",
+		"complied": false
+	}
+]

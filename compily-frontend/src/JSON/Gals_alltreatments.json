@@ -1,0 +1,11 @@
+[
+	{
+		"treatmentPk": {
+			"treatmentName": "פאניקה",
+			"patientId": "313315317"
+		},
+		"date": "2022-6-9",
+		"description": "חשוב! לקחת פעם אחת ביום , מומלץ בבוקר.",
+		"complied": false
+	}
+]

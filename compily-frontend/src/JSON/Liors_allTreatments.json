@@ -1,0 +1,29 @@
+[
+	{
+		"treatmentPk": {
+			"treatmentName": "חרדה",
+			"patientId": "212213214"
+		},
+		"date": "2022/6/4",
+		"description": "לקיחת כדור כל 3 שעות",
+		"complied": false
+	},
+	{
+		"treatmentPk": {
+			"treatmentName": "חרדה שתיים",
+			"patientId": "212213214"
+		},
+		"date": "2022/6/5",
+		"description": "לקיחת כדור כל 5 שעות",
+		"complied": false
+	},
+	{
+		"treatmentPk": {
+			"treatmentName": "חרדה שלוש",
+			"patientId": "212213214"
+		},
+		"date": "2022/6/6",
+		"description": "לקיחת כדור כל 10 שעות",
+		"complied": false
+	}
+]

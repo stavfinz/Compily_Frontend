@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,29 +8,19 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-
-import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
-import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-
 import './PatientTable.css';
-import { LocalConvenienceStoreOutlined, PropaneSharp } from '@mui/icons-material';
-import { IndexKind } from 'typescript';
 
 import Dialog from '../../../ui/Dialog/Dialog'
 import PatientRow from './PatientRow';
+
+import patientsData from '../../../JSON/Liors_allTreatments.json'
 
 function createData(name, date) {
     return { name, date };
 }
 
-const rows = [
-    createData('כאב ראש', '2/5/2022',),
-    createData('כאב בטן', '27/2/2022',),
-    createData('כאב שיניים', '8/8/2022',),
-];
+const rows = patientsData.map((patientData) =>
+    createData(patientData.treatmentPk.treatmentName, patientData.date));
 
 export default function BasicTableAndSearch() {
 

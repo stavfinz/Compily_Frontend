@@ -1,0 +1,23 @@
+[
+	{
+		"patientId": "424426428",
+		"firstName": "צביקה",
+		"lastName": "שאול",
+		"age": 48,
+		"doctorId": "135791357"
+	},
+	{
+		"patientId": "212213214",
+		"firstName": "ליאור",
+		"lastName": "מנשה",
+		"age": 32,
+		"doctorId": "135791357"
+	},
+	{
+		"patientId": "313315317",
+		"firstName": "גל",
+		"lastName": "ברוך",
+		"age": 25,
+		"doctorId": "135791357"
+	}
+]

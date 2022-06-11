@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import PatientTable from './PatientTable/PatientTable';
 import './DoctorView.css';
+
 import Chip from '@mui/material/Chip';
-
-import Paper from '@mui/material/Paper';
-
 import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-const DoctorView = () => {
+import docData from '../../JSON/Doctors.json'
+import patiData from '../../JSON/Ronens_Allpatients.json'
+
+const DoctorView = (props) => {
 
     const [patientFound, setPatientFound] = useState(false);
 
@@ -24,8 +24,13 @@ const DoctorView = () => {
         //window.location.reload();
     }
 
+    const logOut = () => {
+        props.onLogOut();
+    }
+
     return (
         <div className="patient-container">
+            <h3>שלום {docData[0].firstName}</h3>
             <div className="patient-item">
                 <div className="search-container" >
                     <div className="search-item">
@@ -35,15 +40,17 @@ const DoctorView = () => {
                         <TextField fullWidth id="outlined-basic" label="חפש לפי מטופל ת״ז" variant="outlined" />
                     </div>
                     <div className="search-item">
-                        {patientFound ? <Chip label="ישראל ישראלי" variant="outlined" onDelete={handleDelete} /> : null}
+                        {patientFound ? <Chip label={`${patiData[1].firstName} ${patiData[1].lastName}`} variant="outlined" onDelete={handleDelete} /> : null}
                     </div>
 
                 </div>
                 <br />
                 {patientFound ? <PatientTable /> : null}
+                <br />
+                <div>
+                    <Button onClick={logOut}>התנתק</Button>
+                </div>
             </div>
-
-
         </div>
     )
 }

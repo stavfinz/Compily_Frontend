@@ -1,0 +1,29 @@
+[
+	{
+		"treatmentPk": {
+			"treatmentName": "שינה",
+			"patientId": "424426428"
+		},
+		"date": "2022-6-5",
+		"description": "לקיחת כדור לפני שינה",
+		"complied": false
+	},
+	{
+		"treatmentPk": {
+			"treatmentName": "שמחה",
+			"patientId": "424426428"
+		},
+		"date": "2022-6-7",
+		"description": "לקיחת כדור כל 5 שעות",
+		"complied": false
+	},
+	{
+		"treatmentPk": {
+			"treatmentName": "רוגע",
+			"patientId": "424426428"
+		},
+		"date": "2022-6-7",
+		"description": "לקיחת כדור לפני כל ארוחה",
+		"complied": false
+	}
+]

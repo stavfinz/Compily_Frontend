@@ -40,7 +40,7 @@ export default function AlertDialog(props) {
                     {props.input ?
                         <div className="search-container" >
                             <div className="search-item">
-                                <TextField fullWidth id="outlined-basic" label="שם טיפול" variant="outlined" />
+                                <TextField fullWidth id="outlined-basic" label="תיאור הטיפול" variant="outlined" />
                             </div>
                             <div className="search-item">
                                 <Button variant="contained" size='large' type="submit">עדכן</Button>

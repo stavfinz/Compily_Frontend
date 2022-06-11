@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Radio from '@mui/material/Radio';
+
 import Dialog from '../../../ui/Dialog/Dialog';
 
+import patientData from '../../../JSON/Liors_allTreatments.json'
 
 export default function SimpleAccordion() {
 
@@ -25,7 +28,26 @@ export default function SimpleAccordion() {
     return (
         <div>
             {bravoo ? <Dialog title="כל הכבוד לך" content="המשך כך!" button="אישור" onCloseDialog={clickHendleClose} /> : null}
-            <Accordion>
+            {patientData.map((patiData) => {
+                return (
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                        >
+                            <Typography><Radio color="success" onChange={clickHandle} />{patiData.treatmentPk.treatmentName}</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                {patiData.description}
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                )
+            })}
+
+            {/* <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
@@ -54,7 +76,9 @@ export default function SimpleAccordion() {
                         לקחת עם שתייה לפחות 2 כוסות מים מחשש להתייבשות.
           </Typography>
                 </AccordionDetails>
-            </Accordion>
+            </Accordion> */}
+
+
             {/* <Accordion disabled>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
